@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Sweet Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: transparent;
+}
+
+.grid-container {
+    width: 960px;
+    height: 1080px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Full-width children */
+    background-color: transparent;
+}
+
+.title {
+    font-size: clamp(2rem, 6vw, 4rem); /* Responsive scaling */
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    letter-spacing: 0.2em;
+    color: #22685a;
+    background-color: transparent;
+}
+
+.menu-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    color: #22685a;
+    background-color: transparent;
+}
+
+.menu-item {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Scales with viewport width */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    background-color: transparent;
+}
+
+.menu-item .item {
+    flex: 2;
+    font-weight: bold;
+}
+
+.menu-item .calories {
+    flex: 1;
+    text-align: center;
+    font-weight: normal;
+}
+
+.menu-item .price {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+    }
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@font-face {
+    font-family: 'Sweet Sans';
+    src: url('./SweetSans-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sweet Sans';
+    src: url('./SweetSans-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
