@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const port = process.env.PORT;
+
 const sheetID = process.env.SMARTSHEET_ID;
 const smartsheetToken = process.env.SMARTSHEET_TOKEN;
 
@@ -36,6 +36,7 @@ app.get('/sheet-data', async (req, res) => {
     }
 });
 
+const port = process.env.PORT || 3000; // 3000 for local
 app.listen(port, () => {
-    console.log(`Proxy server running on http://localhost:${port}`);
+    console.log('Proxy server running');
 });
