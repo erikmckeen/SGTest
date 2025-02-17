@@ -15,7 +15,7 @@
                 dataDiv.innerHTML = ''; // Clear existing data
 
                 data.rows.forEach(row => {
-                    const [item, description, price, calories] = row.cells;
+                    const [item, price, calories, description] = row.cells;
 
                     const rowElement = document.createElement('div');
                     rowElement.classList.add('menu-item-grid');
