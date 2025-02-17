@@ -55,7 +55,7 @@ body {
 .menu-item-description {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    color: #666;
+    color: #22685a;
     font-size: 1rem;
 }
 
@@ -71,7 +71,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     text-align: right;
-    color: #555;
+    color: #22685a;
     font-size: 1rem;
 }
 
