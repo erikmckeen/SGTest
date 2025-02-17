@@ -2,14 +2,18 @@ import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 
+const __dirname = path.resolve();
 const sheetID = process.env.SMARTSHEET_ID;
 const smartsheetToken = process.env.SMARTSHEET_TOKEN;
+const port = process.env.PORT || 3000; // 3000 for local
 
 const app = express();
 app.use(cors());
+app.use(express.static('public'));
 
 app.get('/sheet-data', async (req, res) => {
     const smartsheetUrl = `https://api.smartsheet.com/2.0/sheets/${sheetID}`;
@@ -36,7 +40,10 @@ app.get('/sheet-data', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 3000; // 3000 for local
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(port, () => {
     console.log('Proxy server running');
 });
