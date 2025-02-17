@@ -8,8 +8,7 @@
     <script>
         async function fetchSmartsheetData() {
             try {
-                //const response = await fetch('http://localhost:3000/sheet-data'); // TEST
-                const response = await fetch('/sheet-data'); // HOSTED
+                const response = await fetch('/sheet-data');
                 const data = await response.json();
 
                 const dataDiv = document.getElementById('menu-data');

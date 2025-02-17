@@ -9,7 +9,7 @@ dotenv.config();
 const __dirname = path.resolve();
 const sheetID = process.env.SMARTSHEET_ID;
 const smartsheetToken = process.env.SMARTSHEET_TOKEN;
-const port = process.env.PORT || 3000; // 3000 for local
+const port = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
