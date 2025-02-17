@@ -18,12 +18,12 @@
                     const rowElement = document.createElement('div');
                     rowElement.classList.add('menu-item');
 
-                    const [item, calories, price] = row.cells.map(cell => cell || '-');
+                    const [item, calories, price] = row.cells;
 
                     rowElement.innerHTML = `
-                        <span class="item">${item}</span>
-                        <span class="calories">${calories} cal</span>
-                        <span class="price">$${price}</span>
+                        <span class="item">${item || '-'}</span>
+                        <span class="calories">${calories || '-'}</span>
+                        <span class="price">${price || '-'}</span>
                     `;
 
                     dataDiv.appendChild(rowElement);
