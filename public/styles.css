@@ -51,14 +51,14 @@ body {
 }
 
 .menu-item-name {
-    grid-column: 1 / 3; /* Full width */
+    grid-column: 1 / 2;
     grid-row: 1 / 2;
     font-weight: bold;
     color: #22685a;
 }
 
 .menu-item-description {
-    grid-column: 1 / 3; /* Full width */
+    grid-column: 1 / 2;
     grid-row: 2 / 3;
     color: #666;
     font-size: 1rem;
