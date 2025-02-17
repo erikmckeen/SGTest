@@ -15,15 +15,16 @@
                 dataDiv.innerHTML = ''; // Clear existing data
 
                 data.rows.forEach(row => {
-                    const rowElement = document.createElement('div');
-                    rowElement.classList.add('menu-item');
+                    const [item, description, price, calories] = row.cells;
 
-                    const [item, calories, price] = row.cells;
+                    const rowElement = document.createElement('div');
+                    rowElement.classList.add('menu-item-grid');
 
                     rowElement.innerHTML = `
-                        <span class="item">${item || '-'}</span>
-                        <span class="calories">${calories || '-'}</span>
-                        <span class="price">${price || '-'}</span>
+                        <div class="menu-item-name">${item || '-'}</div>
+                        <div class="menu-item-description">${description || '-'}</div>
+                        <div class="menu-item-price">${price || '-'}</div>
+                        <div class="menu-item-calories">${calories || '-'}</div>
                     `;
 
                     dataDiv.appendChild(rowElement);

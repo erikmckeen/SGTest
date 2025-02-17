@@ -24,17 +24,6 @@ body {
     background-color: transparent;
 }
 
-.title {
-    font-size: clamp(2rem, 6vw, 4rem); /* Responsive scaling */
-    font-weight: bold;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    letter-spacing: 0.2em;
-    color: #22685a;
-    background-color: transparent;
-}
-
 .menu-data {
     display: flex;
     flex-direction: column;
@@ -42,40 +31,67 @@ body {
     width: 100%;
     color: #22685a;
     background-color: transparent;
+    align-items: center;
 }
 
-.menu-item {
-    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Scales with viewport width */
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    background-color: transparent;
+.menu-item-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 5px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto;
 }
 
-.menu-item .item {
-    flex: 2;
+.menu-item-name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     font-weight: bold;
+    color: #22685a;
 }
 
-.menu-item .calories {
-    flex: 1;
-    text-align: center;
-    font-weight: normal;
+.menu-item-description {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: #666;
+    font-size: 1rem;
 }
 
-.menu-item .price {
-    flex: 1;
-    text-align: center;
+.menu-item-price {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: right;
     font-weight: bold;
+    color: #22685a;
+}
+
+.menu-item-calories {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: right;
+    color: #555;
+    font-size: 1rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .title {
-        font-size: clamp(1.5rem, 4vw, 3rem);
+    .menu-item-grid {
+        grid-template-columns: 1fr; /* Stack into a single column */
+        text-align: center;
+        padding: 15px;
     }
-    .menu-item {
-        flex-direction: column;
+
+    .menu-item-name,
+    .menu-item-description,
+    .menu-item-price,
+    .menu-item-calories {
         text-align: center;
     }
 }
