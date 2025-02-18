@@ -6,9 +6,16 @@
     <title>Menu</title>
     <link rel="stylesheet" href="styles.css">
     <script>
+        function getSmartsheetID() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('sheetID');
+        }
+
         async function fetchSmartsheetData() {
+            const sheetID = getSmartsheetID();
+
             try {
-                const response = await fetch('/sheet-data');
+                const response = await fetch(`/sheet-data?sheetID=${sheetID}`);
                 const data = await response.json();
 
                 const dataDiv = document.getElementById('menu-data');
