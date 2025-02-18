@@ -23,16 +23,20 @@
                 dataDiv.innerHTML = ''; // Clear existing data
 
                 data.rows.forEach(row => {
-                    const [item, price, calories, description] = row.cells;
+                    if (!row.cells || row.cells.length < 4) return;
+
+                    let [item, price, calories, description] = row.cells.map(cell => cell || '');
+
+                    if (!item || item.trim() === '' || item.trim() === '-') return; // Skip rows with no data
 
                     const rowElement = document.createElement('div');
                     rowElement.classList.add('menu-item-grid');
 
                     rowElement.innerHTML = `
-                        <div class="menu-item-name">${item || '-'}</div>
-                        <div class="menu-item-price">${price || '-'}</div>
-                        <div class="menu-item-calories">${calories || '-'}</div>
-                        <div class="menu-item-description">${description || '-'}</div>
+                        <div class="menu-item-name">${item}</div>
+                        <div class="menu-item-price">${price}</div>
+                        <div class="menu-item-calories">${calories}</div>
+                        <div class="menu-item-description">${description}</div>
                     `;
 
                     dataDiv.appendChild(rowElement);
