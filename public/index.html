@@ -29,6 +29,11 @@
                     return itemName && itemName !== "-"; // No empty rows
                 });
 
+                if (validRows.length === 0) {
+                    dataDiv.innerHTML = '<p class="error-message">No valid menu items available</p>';
+                    return;
+                }
+
                 validRows.rows.forEach(row => {
                     const [item, price, calories, description] = row.cells;
 
