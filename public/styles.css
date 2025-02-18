@@ -27,7 +27,7 @@ body {
 .menu-data {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     width: 100%;
     color: #22685a;
     background-color: transparent;
@@ -38,9 +38,11 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: auto auto;
-    gap: 3px;
-    padding: 10px 0;
-    font-size: 1.2rem;
+    gap: 5px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    font-size: 40px;
     width: 100%;
     max-width: 800px;
 }
@@ -50,13 +52,14 @@ body {
     grid-row: 1 / 2;
     font-weight: bold;
     color: #22685a;
+    font-size: 40px;
 }
 
 .menu-item-description {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     color: #22685a;
-    font-size: 1rem;
+    font-size: 32px;
 }
 
 .menu-item-price {
@@ -65,6 +68,7 @@ body {
     text-align: right;
     font-weight: bold;
     color: #22685a;
+    font-size: 40px;
 }
 
 .menu-item-calories {
@@ -72,7 +76,7 @@ body {
     grid-row: 2 / 3;
     text-align: right;
     color: #22685a;
-    font-size: 1rem;
+    font-size: 40px;
 }
 
 /* Responsive adjustments */
