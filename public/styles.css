@@ -27,7 +27,7 @@ body {
 .menu-data {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     width: 100%;
     color: #22685a;
     background-color: transparent;
@@ -38,8 +38,8 @@ body {
     display: grid;
     grid-template-columns: 4fr 1fr; /*4:1 ratio*/
     grid-template-rows: auto auto;
-    gap: 5px;
-    padding: 15px;
+    gap: 2px;
+    padding: 10px;
     background: white;
     border-radius: 10px;
     font-size: 40px;
