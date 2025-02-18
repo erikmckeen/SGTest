@@ -22,16 +22,7 @@
                 const dataDiv = document.getElementById('menu-data');
                 dataDiv.innerHTML = ''; // Clear existing data
 
-                const validRows = data.rows.filter(row => {
-                    if (!row || !row.cells || !Array.isArray(row.cells) || row.cells.length < 4) {
-                        return false;
-                    }
-
-                    const itemName = row.cells[0] ? String(row.cells[0]).trim() : ""; // Ensure it's a string
-                    return itemName && itemName !== "-"; // No empty rows
-                });
-
-                validRows.rows.forEach(row => {
+                data.rows.forEach(row => {
                     const [item, price, calories, description] = row.cells;
 
                     const rowElement = document.createElement('div');
