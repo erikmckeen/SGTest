@@ -10,12 +10,19 @@ const __dirname = path.resolve();
 const smartsheetToken = process.env.SMARTSHEET_TOKEN;
 const port = process.env.PORT || 3000;
 
+const sheetMappings = {
+    'salads': process.env.SMARTSHEET_ID_SALADS,
+    'bowls': process.env.SMARTSHEET_ID_BOWLS,
+    'plates': process.env.SMARTSHEET_ID_PLATES,
+};
+
 const app = express();
 app.use(cors());
 app.use(express.static('public'));
 
-app.get('/sheet-data', async (req, res) => {
-    const sheetID = req.query.sheetID;
+app.get('/sheet-data/:category', async (req, res) => {
+    const category = req.params.category.toLowerCase();
+    const sheetID = sheetMappings[category];
 
     const smartsheetUrl = `https://api.smartsheet.com/2.0/sheets/${sheetID}`;
 
@@ -41,7 +48,7 @@ app.get('/sheet-data', async (req, res) => {
     }
 });
 
-app.get('*', (req, res) => {
+app.get('/:category', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
