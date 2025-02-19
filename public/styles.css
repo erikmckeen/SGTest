@@ -54,14 +54,29 @@ body {
     display: inline-block;
     font-size: 20px;
     font-weight: bold;
-    color: #00473C;
-    border: 2px solid #00473C;
+    color: transparent;
+    background-color: #00473C;
     border-radius: 50%;
     width: 28px;
     height: 28px;
-    line-height: 26px;
+    line-height: 28px;
     text-align: center;
-    margin-right: 5px;
+    font-family: 'Sweet Sans', sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Cut-out Effect */
+.menu-icon::before {
+    content: attr(data-letter);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #F4F3E7;
+    text-align: center;
+    line-height: 28px;
 }
 
 .menu-item-name {

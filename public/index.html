@@ -6,7 +6,6 @@
     <title>Menu</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-
         function getCategory() {
             const pathSegments = window.location.pathname.split('/').filter(segment => segment);
             return pathSegments.length > 0 ? pathSegments[0] : null;
@@ -30,8 +29,8 @@
                     if (!item || item.trim() === '' || item.trim() === '-') return; // Skip rows with no data
 
                     let icons = [];
-                    if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon">V</span>');
-                    if (gluten.toLowerCase() === 'yes') icons.push('<span class="menu-icon">G</span>');
+                    if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="V"></span>');
+                    if (gluten.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="G"></span>');
                     let iconHTML = icons.length > 0 ? `<span class="menu-icons">${icons.join(' ')}</span>` : '';
 
                     const rowElement = document.createElement('div');
