@@ -37,11 +37,10 @@ body {
 .menu-item-grid {
     display: grid;
     grid-template-columns: 4fr 1fr; /*4:1 ratio*/
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     gap: 1px;
     padding: 5px;
     background: #F4F3E7;
-    font-size: 40px;
     width: 100%;
 }
 
