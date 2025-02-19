@@ -14,20 +14,14 @@ body {
     background-color: #F4F3E7;
 }
 
-#grid-container {
+.grid-container {
     width: 960px;
     height: 1080px;
-    margin: 0 auto;
+    padding: 36px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-#bottom-grid-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    align-items: stretch;
+    background-color: #F4F3E7;
 }
 
 .menu-data {
@@ -117,27 +111,6 @@ body {
     text-align: center;
     font-family: 'Sweet Sans', sans-serif;
     position: relative;
-}
-
-.bottom-grid {
-    width: 60%;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    background-color: #F4F3E7;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.bottom-grid-row {
-    font-size: 32px;
-    color: #00473C;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Cut-out Effect */
