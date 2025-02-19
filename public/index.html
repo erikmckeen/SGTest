@@ -29,7 +29,7 @@
 
                     if (!item || item.trim() === '' || item.trim() === '-') return; // Skip rows with no data
 
-                    let icons [];
+                    let icons = [];
                     if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon">V</span>');
                     if (gluten.toLowerCase() === 'yes') icons.push('<span class="menu-icon">G</span>');
                     let iconHTML = icons.length > 0 ? `<span class="menu-icons">${icons.join(' ')}</span>` : '';
