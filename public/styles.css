@@ -26,6 +26,8 @@ body {
 
 body.plates .grid-container {
     background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .menu-data {
