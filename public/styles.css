@@ -14,8 +14,7 @@ body {
     background-color: #F4F3E7;
 }
 
-:root:has(body[data-page="plates"]),
-:root:has(body:has([href*="plates"])) {
+body.plates {
     background-color: transparent !important;
 }
 
