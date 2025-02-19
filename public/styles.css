@@ -51,15 +51,15 @@ body {
 }
 
 .menu-icon {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    color: transparent;
     background-color: #00473C;
     border-radius: 50%;
     width: 28px;
     height: 28px;
-    line-height: 28px;
     text-align: center;
     font-family: 'Sweet Sans', sans-serif;
     font-weight: bold;
@@ -69,14 +69,11 @@ body {
 /* Cut-out Effect */
 .menu-icon::before {
     content: attr(data-letter);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    font-weight: bold;
     color: #F4F3E7;
+    font-size: 18px;
+    font-weight: bold;
     text-align: center;
-    line-height: 28px;
+    position: absolute;
 }
 
 .menu-item-name {
