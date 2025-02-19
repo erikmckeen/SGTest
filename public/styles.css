@@ -45,15 +45,6 @@ body {
     align-items: start;
 }
 
-body.plates .grid-container,
-body.plates .menu-data,
-body.plates .menu-item-grid {
-    background: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-
 .menu-item-name {
     grid-column: 1 / 2;
     grid-row: 1 / 2;

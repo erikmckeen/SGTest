@@ -11,13 +11,6 @@
             return pathSegments.length > 0 ? pathSegments[0] : null;
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const category = getCategory();
-            if (category === "plates") {
-                document.body.classList.add("plates");
-            }
-        });
-
         async function fetchSmartsheetData() {
             const category = getCategory();
 
