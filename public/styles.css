@@ -34,6 +34,17 @@ body {
     align-items: center;
 }
 
+.plates-page .grid-container {
+    background: none;
+    position: relative;
+}
+
+.plates-page .menu-data {
+    background-color: #F4F3E7;
+    height: 50%;
+    padding-bottom: 36px;
+}
+
 .menu-item-grid {
     display: grid;
     grid-template-columns: 4fr 1fr; /*4:1 ratio*/
