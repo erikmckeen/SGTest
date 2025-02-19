@@ -32,12 +32,13 @@
                     let icons '';
                     if (vegan.toLowerCase() === 'yes') icons += `<span class="menu-icon">V</span>`;
                     if (gluten.toLowerCase() === 'yes') icons += `<span class="menu-icon">G</span>`;
+                    icons = icons ? `<span class="menu-icons">${icons}</span>` : '';
 
                     const rowElement = document.createElement('div');
                     rowElement.classList.add('menu-item-grid');
 
                     rowElement.innerHTML = `
-                        <div class="menu-item-name">${item}${icons}</div>
+                        <div class="menu-item-name">${item} ${icons}</div>
                         <div class="menu-item-price">${price}</div>
                         <div class="menu-item-calories">${calories}</div>
                         <div class="menu-item-description">${description}</div>
