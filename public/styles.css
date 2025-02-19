@@ -55,14 +55,12 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    font-weight: bold;
     background-color: #00473C;
     border-radius: 50%;
     width: 28px;
     height: 28px;
     text-align: center;
     font-family: 'Sweet Sans', sans-serif;
-    font-weight: bold;
     position: relative;
 }
 
@@ -71,7 +69,7 @@ body {
     content: attr(data-letter);
     color: #F4F3E7;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     text-align: center;
     position: absolute;
 }
