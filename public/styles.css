@@ -14,7 +14,7 @@ body {
     background-color: #F4F3E7;
 }
 
-body.plates {
+body.plates .grid-container {
     background-color: transparent !important;
 }
 
