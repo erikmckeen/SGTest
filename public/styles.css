@@ -42,6 +42,7 @@ body {
     padding: 5px;
     background: #F4F3E7;
     width: 100%;
+    align-items: start;
 }
 
 .menu-item-name {
