@@ -55,9 +55,11 @@ body {
 
 .menu-item-description {
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
     color: #00473C;
     font-size: 32px;
+    display: flex;
+    align-items: center;
 }
 
 .menu-item-price {
