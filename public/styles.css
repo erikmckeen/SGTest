@@ -91,6 +91,7 @@ body {
     text-align: center;
     width: auto;
     min-width: fit-content;
+    border: 2px solid #00473C;
 }
 
 .menu-icons {
