@@ -85,6 +85,10 @@ body {
     text-align: right;
     color: #00473C;
     font-size: 28px;
+    background-color: #FAEE73;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 .menu-icons {
