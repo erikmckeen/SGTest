@@ -53,6 +53,19 @@
 
                     dataDiv.appendChild(rowElement);
                 });
+
+                if (category === "plates") {
+                    const bottomGrid = document.createElement('div');
+                    bottomGrid.classList.add('bottom-grid');
+
+                    bottomGrid.innerHTML = `
+                        <div class="bottom-grid-row">Vegan    Contains gluten</div>
+                        <div class="bottom-grid-row">We use most major allergens in our kitchens so we cannot
+                                                     guarantee that our food is completely free of any allergen.</div>
+                    `;
+
+                    document.getElementById('page-container').appendChild(bottomGrid);
+            }
             } catch (error) {
                 console.error('Error fetching data:', error);
                 document.getElementById('menu-data').textContent = 'Error fetching data!';
