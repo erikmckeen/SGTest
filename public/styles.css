@@ -42,12 +42,11 @@ body {
     padding: 5px;
     background: #F4F3E7;
     width: 100%;
-    align-items: center;
 }
 
 .menu-item-name {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
+    grid-row: 1 / 2;
     font-weight: bold;
     color: #00473C;
     font-size: 40px;
