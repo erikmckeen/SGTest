@@ -106,6 +106,14 @@ body {
     font-size: 40px;
 }
 
+.menu-item-protein {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    text-align: right;
+    color: #00473C;
+    font-size: 28px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .menu-item-grid {

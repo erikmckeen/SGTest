@@ -22,16 +22,23 @@
                 dataDiv.innerHTML = ''; // Clear existing data
 
                 data.rows.forEach(row => {
-                    if (!row.cells || row.cells.length < 6) return;
+                    let hasProtein = (menuName === "plates");
+                    let columnCount = hasProtein ? 7 : 6;
+                    if (!row.cells || row.cells.length < columnCount) return;
 
-                    let [item, price, calories, description, vegan, gluten] = row.cells.map(cell => cell ? cell.toString().trim() : '');
+                    let [item, price, calories, description, vegan, gluten, protein] =
+                        hasProtein ? row.cells.map(cell => cell ? cell.toString().trim() : '') :
+                        [...row.cells.map(cell => cell ? cell.toString().trim() : ''), ''];
 
                     if (!item || item === '-') return; // Skip rows with no data
 
                     let icons = [];
                     if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="V"></span>');
                     if (gluten.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="G"></span>');
+
                     let iconHTML = icons.length > 0 ? `<span class="menu-icons">${icons.join(' ')}</span>` : '';
+
+                    let proteinHTML = hasProtein ? `<div class="menu-item-protein">${protein}g Protein</div>` : '';
 
                     const rowElement = document.createElement('div');
                     rowElement.classList.add('menu-item-grid');
@@ -41,6 +48,7 @@
                         <div class="menu-item-price">${price}</div>
                         <div class="menu-item-calories">${calories}</div>
                         <div class="menu-item-description">${description}</div>
+                        ${proteinHTML}
                     `;
 
                     dataDiv.appendChild(rowElement);
