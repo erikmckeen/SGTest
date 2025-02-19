@@ -14,8 +14,9 @@ body {
     background-color: #F4F3E7;
 }
 
-body[data-page="plates"] {
-    background-color: transparent !important; /*Transparent background for plates page*/
+:root:has(body[data-page="plates"]),
+:root:has(body:has([href*="plates"])) {
+    background-color: transparent !important;
 }
 
 .grid-container {
