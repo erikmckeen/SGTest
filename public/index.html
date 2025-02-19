@@ -24,9 +24,9 @@
                 data.rows.forEach(row => {
                     if (!row.cells || row.cells.length < 6) return;
 
-                    let [item, price, calories, description, vegan, gluten] = row.cells.map(cell => cell || '');
+                    let [item, price, calories, description, vegan, gluten] = row.cells.map(cell => cell ? cell.toString().trim() : '');
 
-                    if (!item || item.trim() === '' || item.trim() === '-') return; // Skip rows with no data
+                    if (!item || item === '-') return; // Skip rows with no data
 
                     let icons = [];
                     if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="V"></span>');
