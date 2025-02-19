@@ -24,13 +24,6 @@ body {
     background-color: #F4F3E7;
 }
 
-body.plates .grid-container {
-    background-color: rgba(0, 0, 0, 0) !important;
-    box-shadow: none !important;
-    border: none !important;
-    backdrop-filter: none !important;
-}
-
 .menu-data {
     display: flex;
     flex-direction: column;
@@ -50,6 +43,15 @@ body.plates .grid-container {
     background: #F4F3E7;
     width: 100%;
     align-items: start;
+}
+
+body.plates .grid-container,
+body.plates .menu-data,
+body.plates .menu-item-grid {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .menu-item-name {
