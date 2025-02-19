@@ -22,7 +22,7 @@
                 dataDiv.innerHTML = ''; // Clear existing data
 
                 data.rows.forEach(row => {
-                    let hasProtein = (menuName === "plates");
+                    let hasProtein = (category === "plates");
                     let columnCount = hasProtein ? 7 : 6;
                     if (!row.cells || row.cells.length < columnCount) return;
 
