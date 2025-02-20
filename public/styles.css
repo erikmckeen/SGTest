@@ -28,10 +28,10 @@ body {
     height: 600px;
 }
 
-.bottom-text {
+.plates-page .bottom-text {
     width: 960px;
     height: auto;
-    display: none; /* Hidden by default */
+    display: flex;
     align-items: flex-start;
     justify-content: left;
     color: #00473C;
@@ -39,6 +39,9 @@ body {
     font-family: 'Sweet Sans', sans-serif;
     padding: 20px;
     margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 36px;
 }
 
 .menu-data {
