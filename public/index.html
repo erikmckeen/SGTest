@@ -11,17 +11,6 @@
             return pathSegments.length > 0 ? pathSegments[0] : null;
         }
 
-        function showBottomTextIfPlates() {
-            const category = getCategory();
-            const bottomText = document.getElementById('bottom-text');
-
-            if (category === "plates") {
-                bottomText.style.display = "flex";
-            } else {
-                bottomText.style.display = "none";
-            }
-        }
-
         async function fetchSmartsheetData() {
             const category = getCategory();
 
@@ -70,21 +59,13 @@
             }
         }
 
-        function initializePage() {
-            showBottomTextIfPlates();
-            fetchSmartsheetData();
-            setInterval(fetchSmartsheetData, 60000); // Refresh data every minute
-        }
-
-        document.addEventListener('DOMContentLoaded', initializePage);
+        setInterval(fetchSmartsheetData, 60000);
+        window.onload = fetchSmartsheetData;
     </script>
 </head>
-<body class="plates-page">
+<body>
     <div class="grid-container">
         <div id="menu-data" class="menu-data">Loading...</div>
-    </div>
-    <div id="bottom-text" class="bottom-text">
-        <p>Some hardcoded text goes here...</p>
     </div>
 </body>
 </html>

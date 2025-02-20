@@ -22,31 +22,6 @@ body {
     flex-direction: column;
     align-items: stretch;
     background-color: #F4F3E7;
-    justify-content: flex-start;
-    position: relative;
-}
-
-.plates-page .grid-container {
-    height: 600px;
-}
-
-.plates-page .bottom-text {
-    width: 960px;
-    height: auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
-    color: #00473C;
-    font-size: 32px;
-    font-family: 'Sweet Sans', sans-serif;
-    padding: 20px;
-    position: absolute;
-    bottom: 20px;
-    left: 36px;
-}
-
-body:not(.plates-page) .grid-container {
-    height: 1080px;
 }
 
 .menu-data {
