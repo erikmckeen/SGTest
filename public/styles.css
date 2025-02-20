@@ -28,16 +28,17 @@ body {
     height: 600px;
 }
 
-.plates-page .bottom-text {
+.bottom-text {
     width: 960px;
-    height: 480px;
-    display: flex;
+    height: auto;
+    display: none; /* Hidden by default */
     align-items: flex-start;
     justify-content: left;
     color: #00473C;
     font-size: 32px;
     font-family: 'Sweet Sans', sans-serif;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .menu-data {
