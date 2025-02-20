@@ -23,6 +23,7 @@ body {
     align-items: stretch;
     background-color: #F4F3E7;
     justify-content: flex-start;
+    position: relative;
 }
 
 .plates-page .grid-container {
@@ -46,7 +47,6 @@ body {
 
 body:not(.plates-page) .grid-container {
     height: 1080px;
-    justify-content: flex-start;
 }
 
 .menu-data {
