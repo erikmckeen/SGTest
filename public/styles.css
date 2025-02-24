@@ -95,6 +95,8 @@ body {
     width: auto;
     min-width: fit-content;
     border: 1px solid #00473C;
+    position: relative;
+    top: -15px;
 }
 
 .menu-icons {
