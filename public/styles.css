@@ -78,6 +78,8 @@ body {
     text-align: right;
     color: #00473C;
     font-size: 40px;
+    position: relative;
+    top: -5px;
 }
 
 .menu-item-protein {
