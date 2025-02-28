@@ -6,18 +6,20 @@
     <title>Menu</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        function getCategory() {
+        function getCategoryAndStore() {
             const pathSegments = window.location.pathname.split('/').filter(segment => segment);
-            return pathSegments.length > 0 ? pathSegments[0] : null;
+            return {
+                category: pathSegments.length > 0 ? pathSegments[0] : null,
+                storeNumber: pathSegments.length > 1 ? pathSegments[1] : null
+            }
         }
 
         async function fetchSmartsheetData() {
-            const category = getCategory();
+            const { category, storeNumber } = getCategoryAndStore();
 
             try {
                 const response = await fetch(`/sheet-data/${category}`);
                 const data = await response.json();
-
                 const dataDiv = document.getElementById('menu-data');
                 dataDiv.innerHTML = ''; // Clear existing data
 
@@ -26,23 +28,22 @@
                     let columnCount = hasProtein ? 7 : 6;
                     if (!row.cells || row.cells.length < columnCount) return;
 
-                    let [item, price, calories, description, vegan, gluten, protein] =
-                        hasProtein ? row.cells.map(cell => cell ? cell.toString().trim() : '') :
-                        [...row.cells.map(cell => cell ? cell.toString().trim() : ''), ''];
+                    let [item, ...columns] = row.cells.map(cell => cell?.toString().trim() || '');
+                    let price = columns[storeNumber] || '';
+                    let [calories, description, vegan, gluten, protein] = 
+                        hasProtein ? columns.slice(1) : columns.slice(1).concat('');
 
                     if (!item || item === '-') return; // Skip rows with no data
 
                     let icons = [];
                     if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="V"></span>');
                     if (gluten.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="G"></span>');
-
                     let iconHTML = icons.length > 0 ? `<span class="menu-icons">${icons.join(' ')}</span>` : '';
 
                     let proteinHTML = hasProtein ? `<div class="menu-item-protein">${protein}g Protein</div>` : '';
 
                     const rowElement = document.createElement('div');
                     rowElement.classList.add('menu-item-grid');
-
                     rowElement.innerHTML = `
                         <div class="menu-item-name">${item} ${iconHTML}</div>
                         <div class="menu-item-description">${description}</div>
