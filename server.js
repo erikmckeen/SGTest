@@ -20,7 +20,7 @@ const app = express();
 app.use(cors());
 app.use(express.static('public'));
 
-app.get('/sheet-data/:category/:storeNumber', async (req, res) => {
+app.get('/sheet-data/:category', async (req, res) => {
     const category = req.params.category.toLowerCase();
     const sheetID = sheetMappings[category];
 
@@ -48,7 +48,7 @@ app.get('/sheet-data/:category/:storeNumber', async (req, res) => {
     }
 });
 
-app.get('/:category/:storeNumber', (req, res) => {
+app.get('/:category', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
