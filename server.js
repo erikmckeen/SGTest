@@ -25,7 +25,8 @@ const smartsheetIDs = {
 
 const app = express();
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/:store/:category', express.static(path.join(__dirname, 'public')));
 
 app.get('/sheet-data/:store/:category', async (req, res) => {
     const { store, category } = req.params;
