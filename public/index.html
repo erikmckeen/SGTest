@@ -6,18 +6,18 @@
     <title>Menu</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        function getCategory() {
+        function getStoreAndCategory() {
             const pathSegments = window.location.pathname.split('/').filter(segment => segment);
-            return pathSegments.length > 0 ? pathSegments[0] : null;
+            if (pathSegments.length < 2) return null;
+            return { store: pathSegments[0], category: pathSegments[1] };
         }
 
         async function fetchSmartsheetData() {
-            const category = getCategory();
+            const menuInfo = getStoreAndCategory();
 
             try {
-                const response = await fetch(`/sheet-data/${category}`);
+                const response = await fetch(`/sheet-data/${menuInfo.store}/${menuInfo.category}`);
                 const data = await response.json();
-
                 const dataDiv = document.getElementById('menu-data');
                 dataDiv.innerHTML = ''; // Clear existing data
 
@@ -35,7 +35,6 @@
                     let icons = [];
                     if (vegan.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="V"></span>');
                     if (gluten.toLowerCase() === 'yes') icons.push('<span class="menu-icon" data-letter="G"></span>');
-
                     let iconHTML = icons.length > 0 ? `<span class="menu-icons">${icons.join(' ')}</span>` : '';
 
                     let proteinHTML = hasProtein ? `<div class="menu-item-protein">${protein}g Protein</div>` : '';

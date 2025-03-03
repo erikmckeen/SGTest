@@ -10,20 +10,26 @@ const __dirname = path.resolve();
 const smartsheetToken = process.env.SMARTSHEET_TOKEN;
 const port = process.env.PORT || 3000;
 
-const sheetMappings = {
-    'salads': process.env.SMARTSHEET_ID_SALADS,
-    'bowls': process.env.SMARTSHEET_ID_BOWLS,
-    'plates': process.env.SMARTSHEET_ID_PLATES,
+const smartsheetIDs = {
+    "108": {
+        salads: process.env.SMARTSHEET_ID_108_SALADS,
+        bowls: process.env.SMARTSHEET_ID_108_BOWLS,
+        plates: process.env.SMARTSHEET_ID_108_PLATES,
+    },
+    "103": {
+        salads: process.env.SMARTSHEET_ID_103_SALADS,
+        bowls: process.env.SMARTSHEET_ID_103_BOWLS,
+        plates: process.env.SMARTSHEET_ID_103_PLATES,
+    }
 };
 
 const app = express();
 app.use(cors());
 app.use(express.static('public'));
 
-app.get('/sheet-data/:category', async (req, res) => {
-    const category = req.params.category.toLowerCase();
-    const sheetID = sheetMappings[category];
-
+app.get('/sheet-data/:store/:category', async (req, res) => {
+    const { store, category } = req.params;
+    const sheetID = smartsheetIDs[store][category];
     const smartsheetUrl = `https://api.smartsheet.com/2.0/sheets/${sheetID}`;
 
     try {
@@ -48,7 +54,7 @@ app.get('/sheet-data/:category', async (req, res) => {
     }
 });
 
-app.get('/:category', (req, res) => {
+app.get('/:store/:category', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
